@@ -1,0 +1,41 @@
+<div class="container">
+
+	<h4>Countries</h4>
+	<ul class="list-group">
+		<li [ngClass]=" i == 1 ? 'list-group-item active':'list-group-item'"
+			*ngFor="let country of countries ; index as i">{{i+1}} - {{country}}</li>
+	</ul>
+	<br>
+	<ul class="list-group">
+		<li class="{{'list-group-item ' + u.activeStyle}}" *ngFor="let u of users ; index as i">
+			{{i+1}} - {{u.firstName}}
+		</li>
+	</ul>
+
+	<h4>Informations</h4>
+	<p>user full name :{{user.firstName}} {{user.lastName}}</p>
+	<p>user adress : {{user.address}}</p>
+	<p>Phone:</p>
+	<ul>
+		<li *ngFor="let Ph of user.phoneNumber"> {{Ph}} </li>
+	</ul>
+	<p>Email:</p>
+	<ul>
+		<li *ngFor="let em of user.email"> {{em}} </li>
+	</ul>
+
+
+
+	<div [ngSwitch]="PAYS">
+		<p *ngSwitchCase="'Lybie'">Your choice is {{PAYS}}</p>
+		<p *ngSwitchCase="'Tunisie'">Your choice is {{PAYS}}</p>
+		<p *ngSwitchCase="'Algerie'">Your choice is {{PAYS}}</p>
+		<p *ngSwitchDefault>You have to choose a country</p>
+	</div>
+
+
+
+<p id="toJson"></p>
+<p id="toJS"></p>
+
+</div>
