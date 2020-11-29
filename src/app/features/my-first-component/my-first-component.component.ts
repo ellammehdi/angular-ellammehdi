@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { Informations, PonyModel } from "./informations";
-
+import { FormGroup, FormControl } from "@angular/forms";
 @Component({
   selector: "app-my-first-component",
   templateUrl: "./my-first-component.component.html",
@@ -9,6 +9,24 @@ import { Informations, PonyModel } from "./informations";
 export class MyFirstComponentComponent implements OnInit {
   constructor() {}
 
+
+    updateLogin(){
+                 this.LoginControl.setValue("Enter Your Login");
+                 }
+    onSubmit(){
+      console.log(this.ProfileControl.value);
+              }
+  
+  
+  LoginControl= new FormControl();
+
+  ProfileControl = new FormGroup({
+   firstName: new FormControl(),
+   lastName: new FormControl(),
+   email: new FormControl(),
+   password: new FormControl(),
+
+  });
   poniesDict = new Map<number, PonyModel>();
 
   ponies: Array<any> = [

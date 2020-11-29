@@ -41,3 +41,34 @@
 <p>{{ birthDate | date:'dd/MM/yyyy' }}</p>
 
 <p>{{ birthDate | date:'shortTime' }}</p>
+
+
+<label>
+Login test: <input type="text" [formControl]="LoginControl">
+
+{{LoginControl.value}}
+<br>
+<button (click)="updateLogin()">Enter Your Login</button>
+</label>
+<br><br><br><br>
+
+
+<form [formGroup]= "ProfileControl" (ngSubmit)="onSubmit()">
+<label>
+First Name : <input type="text" formControlName="firstName">
+</label>
+<br>
+<label>
+ Last Name : <input type="text" formControlName="lastName">
+</label>
+<br>
+<label>
+Email : <input type="text" formControlName="email">
+</label>
+<br>
+<label>
+Password : <input type="text" formControlName="password">
+</label>
+<br>
+<button>Submit</button>
+  </form>
