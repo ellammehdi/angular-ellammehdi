@@ -10,7 +10,7 @@ import { StockListingComponent } from "./features/stock-management/stock-listing
 import { StockService } from "./features/stock-management/stock.service";
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, MatInputModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule],
   declarations: [
     AppComponent,
     HelloComponent,
