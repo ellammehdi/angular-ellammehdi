@@ -45,7 +45,7 @@
 
 <label>
 Login test: <input type="text" [formControl]="LoginControl">
-
+<br>
 {{LoginControl.value}}
 <br>
 <button (click)="updateLogin()">Enter Your Login</button>
@@ -56,6 +56,7 @@ Login test: <input type="text" [formControl]="LoginControl">
 <form [formGroup]= "ProfileControl" (ngSubmit)="onSubmit()">
 <label>
 First Name : <input type="text" formControlName="firstName">
+
 </label>
 <br>
 <label>
@@ -69,6 +70,29 @@ Email : <input type="text" formControlName="email">
 <label>
 Password : <input type="text" formControlName="password">
 </label>
+<div formGroupName="Address">
+<label>
+City : <input type="text" formControlName="city">
+</label>
+<label>
+Code Postal : <input type="text" formControlName="CodePostal">
+</label>
+</div>
 <br>
 <button>Submit</button>
+<button (click)="UpdateProfile()">Update Profile</button>
+<button (click)="UpdateLogPass()">Update Log/Pass</button>
+<br>
+  </form>
+  
+  <br><br><br>
+  <br><br><br>
+  <form [formGroup]= "LogForm">
+<label>    
+    Email : <input type="text" formControlName="UserName">
+</label>
+<br>
+<label>
+Password : <input type="text" formControlName="Pass">
+</label>
   </form>

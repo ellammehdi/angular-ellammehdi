@@ -1,22 +1,52 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { Informations, PonyModel } from "./informations";
-import { FormGroup, FormControl } from "@angular/forms";
+import { FormGroup, FormControl, FormBuilder } from "@angular/forms";
 @Component({
   selector: "app-my-first-component",
   templateUrl: "./my-first-component.component.html",
   styleUrls: ["./my-first-component.component.css"]
 })
+
+
 export class MyFirstComponentComponent implements OnInit {
-  constructor() {}
+  LogForm:FormGroup;
+  constructor(fb:FormBuilder) {
+    this.LogForm=fb.group({
+    UserName: '',
+    Pass:'',
+    })
+                              }
 
-
+   
     updateLogin(){
                  this.LoginControl.setValue("Enter Your Login");
                  }
     onSubmit(){
       console.log(this.ProfileControl.value);
               }
-  
+      UpdateProfile(){
+       this.ProfileControl.setValue(
+           {
+             firstName:"Your FirstName",
+             lastName:"Your LastName",
+             email:"Your Email",
+             password:"Your Password",
+             Address: {
+            city:"Your City",
+            CodePostal:"Code Postal"}
+           }
+          )
+          }
+ UpdateLogPass(){
+       this.ProfileControl.patchValue(
+           {
+            email:"email@example.com",
+             password:"*********",
+           }
+          )
+          }
+        
+          
   
   LoginControl= new FormControl();
 
@@ -25,6 +55,10 @@ export class MyFirstComponentComponent implements OnInit {
    lastName: new FormControl(),
    email: new FormControl(),
    password: new FormControl(),
+    Address: new FormGroup({
+     city: new FormControl(),
+     CodePostal: new FormControl()
+    })
 
   });
   poniesDict = new Map<number, PonyModel>();
