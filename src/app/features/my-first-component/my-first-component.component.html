@@ -1,98 +1,34 @@
-<!-- {{info | json}}
-
-
-<br><br><br><br>
-{{stringInfo}} -->
-
-<!-- <ul>	<li *ngFor="let p of ponies, let i = index">{{i}} - {{p.name}}</li>
-</ul>
-
-<ul>
-	<li *ngFor="let p of ponies | slice:0:2">{{p.name}}</li>
-</ul>
-
-<ul>
-	<li *ngFor="let p of ponies | slice:1:4">{{p.name}}</li>
-</ul>
-
-<p>{{ 'Ninja Squad' | slice:0:5 }}</p>
-
-<p>{{ 'Ninja Squad' | slice:3 }}</p>
-
-<p>{{ 'Ninja Squad' | slice:-5 }}</p>
-
-<p>{{poniesDict | json}}</p> -->
-
-<p>{{ 1345.55 | number }}</p>
-<p>{{ 12345 | number:'7.' }}</p>
-
-<p>{{ 12345.22 | number:'.5' }}</p>
-
-<p>{{ 12345.355929 | number:'.1-4' }}</p>
-
-<p>{{ 80 | percent }}</p>
-
-<p>{{ 0.8 | percent:'.3' }}</p>
-
-<p>{{ 10.6 | currency:'USD' }}</p>
-
-<p>{{ 10.6 | currency:'USD' }}</p>
-
-<p>{{ birthDate | date:'dd/MM/yyyy' }}</p>
-
-<p>{{ birthDate | date:'shortTime' }}</p>
-
-
-<label>
-Login test: <input type="text" [formControl]="LoginControl">
-<br>
-{{LoginControl.value}}
-<br>
-<button (click)="updateLogin()">Enter Your Login</button>
-</label>
-<br><br><br><br>
-
-
-<form [formGroup]= "ProfileControl" (ngSubmit)="onSubmit()">
-<label>
-First Name : <input type="text" formControlName="firstName">
+<form [formGroup]="ProfileControl" (ngSubmit)="onSubmit()">
+	<label>
+First Name : <input mat-input type="text" formControlName="firstName">
 
 </label>
-<br>
-<label>
+	<br>
+	<label>
  Last Name : <input type="text" formControlName="lastName">
 </label>
-<br>
-<label>
+	<br>
+	<label>
 Email : <input type="text" formControlName="email">
 </label>
-<br>
-<label>
+	<br>
+	<label>
 Password : <input type="text" formControlName="password">
 </label>
-<div formGroupName="Address">
-<label>
+	<div formGroupName="Address">
+		<label>
 City : <input type="text" formControlName="city">
 </label>
-<label>
+		<label>
 Code Postal : <input type="text" formControlName="CodePostal">
 </label>
-</div>
-<br>
-<button>Submit</button>
-<button (click)="UpdateProfile()">Update Profile</button>
-<button (click)="UpdateLogPass()">Update Log/Pass</button>
-<br>
+	</div>
+	<br>
+	<button>Submit</button>
+	<button (click)="UpdateProfile()">Update Profile</button>
+	<button (click)="UpdateLogPass()">Update Log/Pass</button>
+	<br>
   </form>
-  
-  <br><br><br>
-  <br><br><br>
-  <form [formGroup]= "LogForm">
-<label>    
-    Email : <input type="text" formControlName="UserName">
-</label>
-<br>
-<label>
-Password : <input type="text" formControlName="Pass">
-</label>
-  </form>
+
+	<br><br><br>
+	<br><br><br>
