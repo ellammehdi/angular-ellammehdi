@@ -1,34 +1,36 @@
 <form [formGroup]="ProfileControl" (ngSubmit)="onSubmit()">
-	<label>
-First Name : <input mat-input type="text" formControlName="firstName">
 
-</label>
-	<br>
-	<label>
+	<mat-form-field>
+		<mat-label>Favorite food</mat-label>
+		<input matInput  placeholder="Ex. Pizza" formControlName="firstName">
+ </mat-form-field>
+
+		<br>
+		<label>
  Last Name : <input type="text" formControlName="lastName">
 </label>
-	<br>
-	<label>
+		<br>
+		<label>
 Email : <input type="text" formControlName="email">
 </label>
-	<br>
-	<label>
+		<br>
+		<label>
 Password : <input type="text" formControlName="password">
 </label>
-	<div formGroupName="Address">
-		<label>
+		<div formGroupName="Address">
+			<label>
 City : <input type="text" formControlName="city">
 </label>
-		<label>
+			<label>
 Code Postal : <input type="text" formControlName="CodePostal">
 </label>
-	</div>
-	<br>
-	<button>Submit</button>
-	<button (click)="UpdateProfile()">Update Profile</button>
-	<button (click)="UpdateLogPass()">Update Log/Pass</button>
-	<br>
+		</div>
+		<br>
+		<button>Submit</button>
+		<button (click)="UpdateProfile()">Update Profile</button>
+		<button (click)="UpdateLogPass()">Update Log/Pass</button>
+		<br>
   </form>
 
-	<br><br><br>
-	<br><br><br>
+		<br><br><br>
+		<br><br><br>
