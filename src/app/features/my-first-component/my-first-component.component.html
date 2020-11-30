@@ -1,4 +1,4 @@
-<div [formGroup]="ProfileControl" (ngSubmit)="onSubmit()">
+<div [formGroup]="identityFormGroup" (ngSubmit)="onSubmit()">
 	<mat-form-field>
 		<mat-label>First Name</mat-label>
 		<input matInput placeholder="Ex. Pizza" formControlName="firstName" style="width:100%" />
@@ -19,19 +19,9 @@
 					<input matInput formControlName="password" >
   </mat-form-field>
 					<br />
-					<div formGroupName="Address">
-						<mat-form-field>
-							<mat-label>City</mat-label>
-							<input matInput type="text" formControlName="city" >
-    </mat-form-field>
-							<br />
-							<mat-form-field>
-								<mat-label>Code Postal</mat-label>
-								<input matInput type="text" formControlName="CodePostal" >
-    </mat-form-field>
-					</div>
+
 					<br />
-					<button>Submit</button>
+					<button type="submit">Submit</button>
 					<button (click)="UpdateProfile()">Update Profile</button>
 					<button (click)="UpdateLogPass()">Update Log/Pass</button>
 </div>
