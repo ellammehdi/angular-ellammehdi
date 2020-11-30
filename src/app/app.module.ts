@@ -10,10 +10,12 @@ import { StockListingComponent } from "./features/stock-management/stock-listing
 import { StockService } from "./features/stock-management/stock.service";
 import { MatInputModule } from "@angular/material/input";
 import { DemoMaterialModule } from "./material.module";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     DemoMaterialModule
