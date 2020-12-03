@@ -1,27 +1,49 @@
-<div [formGroup]="identityFormGroup" (ngSubmit)="onSubmit()">
+<div [formGroup]="identityFormGroup">
 	<mat-form-field>
 		<mat-label>First Name</mat-label>
-		<input matInput placeholder="Ex. Pizza" formControlName="firstName" style="width:100%" />
+		<input matInput placeholder="Ex. ElMehdi" formControlName="firstName"/>
   </mat-form-field>
+  <span *ngIf="firstName.invalid && firstName.touched && firstName.dirty">
+    First Name is required.</span>
+    <span *ngIf="firstName.pristine">
+    Please Enter Your First Name.</span>
 		<br />
+
 		<mat-form-field>
 			<mat-label>Last Name</mat-label>
 			<input matInput formControlName="lastName" >
   </mat-form-field>
+  <span  *ngIf="lastName.invalid && lastName.touched && lastName.dirty">
+    Last Name is required.</span>
+    <span *ngIf="firstName.pristine">
+    Please Enter Your Last Name.</span>
 			<br />
 			<mat-form-field>
-				<mat-label>Emails</mat-label>
+				<mat-label>Email</mat-label>
 				<input matInput formControlName="email" >
   </mat-form-field>
+  <span *ngIf="email.invalid && email.touched && email.dirty">
+    Last Name is required.</span>
+    <span  *ngIf="email.pristine">
+    Please Enter Your Last Name.</span>
 				<br />
 				<mat-form-field>
 					<mat-label>Password</mat-label>
-					<input matInput formControlName="password" >
+					<input type="password" matInput formControlName="Password" >
   </mat-form-field>
+  <span *ngIf="Password.invalid && Password.touched && Password.dirty">
+    Last Name is required.</span>
+    <span  *ngIf="Password.pristine">
+    Please Enter Your Password.</span>
 					<br />
 
 					<br />
-					<button type="submit">Submit</button>
-					<button (click)="UpdateProfile()">Update Profile</button>
-					<button (click)="UpdateLogPass()">Update Log/Pass</button>
+					<button mat-stroked-button (click)="Submit()">Submit</button>
+					<button mat-stroked-button (click)="UpdateProfile()">Update Profile</button>
+					
+          <br />
+          <br />
+					<br />
+          Form Status is:  {{identityFormGroup.status}}
+
 </div>

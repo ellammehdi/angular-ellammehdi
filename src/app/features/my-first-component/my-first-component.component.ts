@@ -17,30 +17,38 @@ export class MyFirstComponentComponent implements OnInit {
 
   ngOnInit() {
     this.identityFormGroup = this.fb.group({
-      firstName: ["", Validators.required],
-      lastName: "",
-      email: "",
-      password: ""
+      firstName: ["", [Validators.required],[Validators.minLength(4)]],
+      lastName: ["",[Validators.minLength(4)]],
+      email: ["",[Validators.email]],
+      Password: ["", [Validators.minLength(6)]],
     });
   }
 
-  onSubmit() {
-    console.log("lkjlkj");
+  Submit() {
+    console.log(this.identityFormGroup.value);
   }
+
+get firstName (){
+ return this.identityFormGroup.get("firstName");
+}
+get lastName (){
+ return this.identityFormGroup.get("lastName");
+}
+get email (){
+ return this.identityFormGroup.get("email");
+}
+get Password (){
+ return this.identityFormGroup.get("Password");
+}
+
+
   UpdateProfile() {
-    this.ProfileControl.setValue({
+    this.identityFormGroup.setValue({
       firstName: "Your FirstName",
       lastName: "Your LastName",
-      email: "Your Email",
-      password: "Your Password"
+      email: "example@gmail.com",
+      Password: "YourPassword"
     });
   }
-  UpdateLogPass() {}
-
-  ProfileControl = new FormGroup({
-    firstName: new FormControl(),
-    lastName: new FormControl(),
-    email: new FormControl(),
-    password: new FormControl()
-  });
+ 
 }
