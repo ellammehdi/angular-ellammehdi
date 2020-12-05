@@ -18,14 +18,17 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    DemoMaterialModule
+    DemoMaterialModule,
+
   ],
   declarations: [
     AppComponent,
     HelloComponent,
     ComppComponent,
     MyFirstComponentComponent,
-    StockListingComponent
+    StockListingComponent,
+
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

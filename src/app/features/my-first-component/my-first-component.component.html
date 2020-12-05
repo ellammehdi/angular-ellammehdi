@@ -2,39 +2,62 @@
 	<mat-form-field>
 		<mat-label>First Name</mat-label>
 		<input matInput placeholder="Ex. ElMehdi" formControlName="firstName"/>
+
+    <mat-error *ngIf="firstName.invalid && firstName.touched && firstName.dirty">
+      You must provide a <strong>First Name</strong>
+   </mat-error>
+    <mat-error *ngIf="firstName.pristine">
+    Please Enter Your First Name.
+    </mat-error>
   </mat-form-field>
-  <span *ngIf="firstName.invalid && firstName.touched && firstName.dirty">
-    First Name is required.</span>
-    <span *ngIf="firstName.pristine">
-    Please Enter Your First Name.</span>
+
+
 		<br />
 
 		<mat-form-field>
 			<mat-label>Last Name</mat-label>
-			<input matInput formControlName="lastName" >
+			<input matInput placeholder="Ex. El Lamrani" formControlName="lastName" >
+       <mat-error *ngIf="lastName.invalid && lastName.touched && lastName.dirty">
+      You must provide a <strong>Last Name</strong>
+   </mat-error>
+    <mat-error *ngIf="lastName.pristine">
+    Please Enter Your Last Name.
+    </mat-error>
   </mat-form-field>
-  <span  *ngIf="lastName.invalid && lastName.touched && lastName.dirty">
-    Last Name is required.</span>
-    <span *ngIf="firstName.pristine">
-    Please Enter Your Last Name.</span>
+  
 			<br />
 			<mat-form-field>
 				<mat-label>Email</mat-label>
-				<input matInput formControlName="email" >
+				<input matInput placeholder="Ex.ellamranii@gmail.com" formControlName="email" >
+        <mat-error *ngIf="email.invalid && email.touched && email.dirty">
+      You must provide an <strong>Email</strong>
+   </mat-error>
+    <mat-error *ngIf="email.pristine">
+    Please Enter Your Email.
+    </mat-error>
   </mat-form-field>
-  <span *ngIf="email.invalid && email.touched && email.dirty">
-    Last Name is required.</span>
-    <span  *ngIf="email.pristine">
-    Please Enter Your Last Name.</span>
+  
 				<br />
 				<mat-form-field>
-					<mat-label>Password</mat-label>
-					<input type="password" matInput formControlName="Password" >
+					<mat-label>Phone Number</mat-label>
+					<input matInput formControlName="numberPhone" >
+          <mat-error *ngIf="numberPhone.invalid && numberPhone.touched && numberPhone.dirty">
+      You must provide a <strong>Phone Number</strong>
+   </mat-error>
+    <mat-error *ngIf="numberPhone.pristine">
+    Please Enter Your Phone Number.
+    </mat-error>
   </mat-form-field>
-  <span *ngIf="Password.invalid && Password.touched && Password.dirty">
-    Last Name is required.</span>
-    <span  *ngIf="Password.pristine">
-    Please Enter Your Password.</span>
+
+
+  <!--<mat-form-field>
+    <input matInput placeholder="Phone Number" [formControl]="phoneFormControl>
+    <mat-error *ngIf="phoneFormControl.hasError('required') || phoneFormControl.hasError('validCountryPhone')">
+        Phone Number is <strong>required</strong>
+    </mat-error>
+   
+</mat-form-field>
+ -->
 					<br />
 
 					<br />
